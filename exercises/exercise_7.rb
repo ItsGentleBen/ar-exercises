@@ -10,3 +10,11 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+puts "Enter new store name. Be creative!"
+@queried_store = $stdin.gets.chomp
+
+@new_store = Store.create(name: @queried_store)
+
+if !@new_store.valid?
+  puts @new_store.errors.full_messages
+end
